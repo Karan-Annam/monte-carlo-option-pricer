@@ -9,9 +9,14 @@ struct Inputs{
     double strike_price = 0;
 };
 
+struct Prices{
+    double put_option_price = 0;
+    double call_option_price = 0;
+};
+
 constexpr int num_samples = 1000000000;
 
-double monte_carlo_price(Inputs input);
+Prices euro_monte_carlo_price(Inputs& input);
 
 
 #endif 
