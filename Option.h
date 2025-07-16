@@ -21,7 +21,7 @@ public:
         int num_steps = 252; // Default number of steps per a year
     };
 
-    virtual ~Option() = default;
+    virtual ~Option();
 
     // calculate payoff given a price path
     // to be overridden by derived option types
@@ -29,7 +29,7 @@ public:
 
     virtual Option::Inputs get_inputs() const = 0;
 
-    virtual void set_inputs(const Option::Inputs& new_inputs);
+    virtual void set_inputs(const Option::Inputs& new_inputs) = 0;
 
     //returns option type as string
     virtual std::string get_option_type() const = 0;
