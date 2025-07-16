@@ -5,6 +5,13 @@
 #include "monte_carlo_pricer.h"
 
 
+class monte_carlo_pricer{
+public:
+    
+    Prices euro_monte_carlo_price(Inputs& input);
+};
+
+
 int main(void){
     Inputs input;
     Prices prices;
