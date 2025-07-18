@@ -32,6 +32,11 @@ double MonteCarloOptionPricer::price_option(const Option& option, Option::Inputs
     for(int i = 0; i < inputs.num_simulations; i++){
         std::vector<double> path = MonteCarloOptionPricer::generate_price_path(inputs);
         avg_payoff += option.calculate_payoff(path);
+
+        // Temporary progress indicator REMOVE/REPLACE LATER
+        if(i % 1000 == 0){
+            std::cout << (i/static_cast<double>(inputs.num_simulations)) * 100 << "% completed\r";
+        }
     }
     avg_payoff = avg_payoff / inputs.num_simulations;
 

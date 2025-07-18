@@ -13,7 +13,7 @@ int main() {
     inputs.risk_free_rate = 0.05; 
     inputs.volatility = 0.2;       
     inputs.num_steps = 100;        
-    inputs.num_simulations = 10000; 
+    inputs.num_simulations = 100000; 
 
     
     EuropeanCallOption call_option(inputs);

@@ -21,8 +21,11 @@ public:
     struct price_results{
         double price; 
         double stddev;
-        double confidence_interval_upper_bound; // 95% confidence interval for the price
-        double confidence_interval_lower_bound; // 95% confidence interval for the price
+        double delta;
+        double gamma;
+        double theta;
+        double vega;
+        //double rho
         std::string option_type; 
     };
 
@@ -43,6 +46,8 @@ public:
 
     // if inputs are provided, they will be used to override the default values in the option
     double price_option(const Option& option, Option::Inputs& inputs);
+
+    price_results calculate_greeks(const Option& option);
 
     //STILL NEED TO IMPLEMENT
     price_results price_option_with_stats(const Option& option);
