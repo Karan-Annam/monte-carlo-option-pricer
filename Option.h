@@ -15,10 +15,9 @@ public:
         double time_to_expiration = 1; // in years
         double volatility = 0.2; // annualized volatility
         double risk_free_rate = 0.05; // annualized risk-free rate
-        double current_price = 100.0; // current price of asset
+        double spot_price = 100.0; // current price of asset
         double strike_price = 100.0; // strike price of option
-        int num_simulations = 100000; // num of simulations for Monte Carlo
-        int num_steps = 252; // Default number of steps per a year
+        
     };
 
     virtual ~Option();

@@ -35,17 +35,17 @@ private:
 
     //generates a single price path using geometric brownian motion
     //outputs vector of pricer over time steps
-    std::vector<double> generate_price_path(const Option::Inputs& inputs);
+    std::vector<double> generate_price_path(Option::Inputs& inputs, int num_steps);
 
 public:
     MonteCarloOptionPricer();
 
     //prices an option using Monte Carlo simulation
     //uses the provided option object to calculate payoffs... uses included inputs
-    double price_option(const Option& option);
+    double price_option(const Option& option, int num_steps, int num_sims);
 
     // if inputs are provided, they will be used to override the default values in the option
-    double price_option(const Option& option, Option::Inputs& inputs);
+    double price_option(const Option& option, Option::Inputs& inputs, int num_steps, int num_sims);
 
     price_results calculate_greeks(const Option& option);
 

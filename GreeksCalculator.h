@@ -1,15 +1,19 @@
 #ifndef GREEKS_CALCULATOR_H
 #define GREEKS_CALCULATOR_H
+#include "Option.h"
+#include "MonteCarloOptionPricer.h"
 
-class GreeksCalculator {
-    private: 
-        std::vector<vector<double>> cached_rand_nums;
+namespace greeks {
 
-    public:
-        GreeksCalculator();
-        GreeksCalculator(std::vector<std::vector<double>> cached_rand_nums);
+    double calculate_delta(Option& option, MonteCarloOptionPricer& pricer, double calc_price);
 
-        double calculate_delta(Option& option)
+    double calculate_gamma(Option& option, MonteCarloOptionPricer& pricer, double calc_price);
+
+    double calculate_theta(Option& option);
+
+    double calculate_vega(Option& option);
+
+    double calculate_rho(Option& option);
 }
 
 #endif
