@@ -19,7 +19,7 @@ int main() {
     
     MonteCarloOptionPricer pricer;
 
-    double call_price = pricer.price_option(call_option, 252, 1000000);
+    double call_price = pricer.price_option(call_option, 252, 100000);
 
     std::cout << "European Call Option Price: " << call_price << std::endl;
 
